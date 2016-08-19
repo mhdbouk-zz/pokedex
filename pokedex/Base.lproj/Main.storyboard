@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Pokemon.ttf">
+            <string>PokemonSolidNormal</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -38,6 +43,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="297" translatesAutoresizingMaskIntoConstraints="NO" id="Gkp-4T-wxQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="80"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.70355603448275861" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="NfQ-s0-pcL"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="NfQ-s0-pcL"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-Xf-4Mx">
                                                     <rect key="frame" x="0.0" y="81" width="110" height="29"/>
                                                     <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="0.70355603448275861" colorSpace="calibratedRGB"/>
@@ -48,19 +65,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="297" translatesAutoresizingMaskIntoConstraints="NO" id="Gkp-4T-wxQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="80"/>
-                                                    <color key="backgroundColor" white="1" alpha="0.70355603448275861" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="NfQ-s0-pcL"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Gkp-4T-wxQ" secondAttribute="trailing" id="JhC-Ur-uwX"/>
                                             <constraint firstItem="NKI-Xf-4Mx" firstAttribute="leading" secondItem="pKS-ck-cIU" secondAttribute="leading" id="Nkg-Ak-onT"/>
+                                            <constraint firstItem="NKI-Xf-4Mx" firstAttribute="top" secondItem="Gkp-4T-wxQ" secondAttribute="bottom" id="RNL-CY-Z5B"/>
                                             <constraint firstItem="Gkp-4T-wxQ" firstAttribute="top" secondItem="pKS-ck-cIU" secondAttribute="top" id="XB5-MD-kbk"/>
                                             <constraint firstAttribute="trailing" secondItem="NKI-Xf-4Mx" secondAttribute="trailing" id="cKb-LQ-IzN"/>
                                             <constraint firstItem="Gkp-4T-wxQ" firstAttribute="leading" secondItem="pKS-ck-cIU" secondAttribute="leading" id="qVn-rA-z64"/>
@@ -80,47 +91,42 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-CV-NRd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="POKEDEX" translatesAutoresizingMaskIntoConstraints="NO" id="6mj-Nd-GvC">
-                                        <rect key="frame" x="247" y="24" width="107" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PokeDesk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8Z-zY-WAV">
+                                        <rect key="frame" x="235" y="20" width="130" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="107" id="GY1-ef-ISv"/>
-                                            <constraint firstAttribute="width" constant="128" id="QPi-x7-jmE"/>
-                                            <constraint firstAttribute="height" constant="38" id="VRw-jh-a67"/>
-                                            <constraint firstAttribute="height" constant="32" id="XsU-oj-cMb"/>
-                                            <constraint firstAttribute="height" constant="43" id="dLq-yG-sIi"/>
-                                            <constraint firstAttribute="width" constant="142" id="m43-s8-gpp"/>
+                                            <constraint firstAttribute="width" constant="130" id="QRd-Ob-KVD"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="QPi-x7-jmE"/>
-                                                <exclude reference="VRw-jh-a67"/>
-                                                <exclude reference="dLq-yG-sIi"/>
-                                                <exclude reference="m43-s8-gpp"/>
-                                            </mask>
-                                        </variation>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyF-YE-PTj">
+                                        <rect key="frame" x="562" y="23" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="L0J-YY-jRP"/>
+                                            <constraint firstAttribute="height" constant="30" id="OLk-CI-LxJ"/>
+                                        </constraints>
+                                        <state key="normal" image="speaker"/>
+                                        <connections>
+                                            <action selector="musicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ckm-1q-974"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="6mj-Nd-GvC" firstAttribute="top" secondItem="3b6-CV-NRd" secondAttribute="top" constant="24" id="166-X3-hvG"/>
-                                    <constraint firstAttribute="bottom" secondItem="6mj-Nd-GvC" secondAttribute="bottom" constant="8" id="FQE-5C-drY"/>
-                                    <constraint firstItem="6mj-Nd-GvC" firstAttribute="centerX" secondItem="3b6-CV-NRd" secondAttribute="centerX" id="Hfa-F0-dW0"/>
-                                    <constraint firstItem="6mj-Nd-GvC" firstAttribute="centerX" secondItem="3b6-CV-NRd" secondAttribute="centerX" id="SnX-qN-6bm"/>
-                                    <constraint firstItem="6mj-Nd-GvC" firstAttribute="top" secondItem="3b6-CV-NRd" secondAttribute="top" constant="13" id="Wp0-3L-3AW"/>
+                                    <constraint firstItem="G8Z-zY-WAV" firstAttribute="centerX" secondItem="3b6-CV-NRd" secondAttribute="centerX" id="4GF-2s-TrX"/>
+                                    <constraint firstAttribute="bottom" secondItem="CyF-YE-PTj" secondAttribute="bottom" constant="8" id="IjX-QJ-btd"/>
+                                    <constraint firstAttribute="trailing" secondItem="CyF-YE-PTj" secondAttribute="trailing" constant="8" id="Udh-aE-4ak"/>
                                     <constraint firstAttribute="height" constant="64" id="ZPc-Kg-mUz"/>
-                                    <constraint firstItem="6mj-Nd-GvC" firstAttribute="top" secondItem="3b6-CV-NRd" secondAttribute="top" constant="18" id="auj-NI-X6I"/>
-                                    <constraint firstAttribute="bottom" secondItem="6mj-Nd-GvC" secondAttribute="bottom" constant="8" id="fSY-Ze-WWO"/>
-                                    <constraint firstItem="6mj-Nd-GvC" firstAttribute="centerX" secondItem="3b6-CV-NRd" secondAttribute="centerX" id="x2j-4l-Umr"/>
-                                    <constraint firstAttribute="bottom" secondItem="6mj-Nd-GvC" secondAttribute="bottom" constant="8" id="yph-II-I03"/>
+                                    <constraint firstItem="G8Z-zY-WAV" firstAttribute="top" secondItem="3b6-CV-NRd" secondAttribute="top" constant="20" id="fQ8-z7-Ia7"/>
+                                    <constraint firstAttribute="trailing" secondItem="CyF-YE-PTj" secondAttribute="trailing" constant="8" id="p93-Jy-AwV"/>
+                                    <constraint firstAttribute="bottom" secondItem="G8Z-zY-WAV" secondAttribute="bottom" constant="8" id="w5o-Tt-Gc7"/>
+                                    <constraint firstAttribute="bottom" secondItem="CyF-YE-PTj" secondAttribute="bottom" constant="11" id="yFY-OR-J27"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="FQE-5C-drY"/>
-                                        <exclude reference="Hfa-F0-dW0"/>
-                                        <exclude reference="Wp0-3L-3AW"/>
-                                        <exclude reference="auj-NI-X6I"/>
-                                        <exclude reference="x2j-4l-Umr"/>
-                                        <exclude reference="yph-II-I03"/>
+                                        <exclude reference="IjX-QJ-btd"/>
+                                        <exclude reference="Udh-aE-4ak"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -160,7 +166,7 @@
     </scenes>
     <resources>
         <image name="297" width="120" height="120"/>
-        <image name="POKEDEX" width="510" height="152"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="speaker" width="128" height="128"/>
     </resources>
 </document>
