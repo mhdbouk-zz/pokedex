@@ -27,10 +27,21 @@ class PokemonDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(pokemon.name)
-        // Do any additional setup after loading the view.
+        
+        nameLabel.text = pokemon.name
+        mainImage.image = UIImage(named: "\(pokemon.pokedexId)")
+        pokemon.downloadPokemonDetails {
+            self.updateUI()
+        }
     }
 
+    func updateUI(){
+        self.defenseLabel.text = self.pokemon.defense
+        self.baseAttackLabel.text = self.pokemon.baseAttack
+        self.weightLabel.text = self.pokemon.weight
+        self.heightLabel.text = self.pokemon.height
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
